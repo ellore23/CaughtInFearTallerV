@@ -31,39 +31,39 @@ public class spawner : MonoBehaviour
 
         if(randomizer == 1){
 
-            Instantiate(prop1, coord1, Quaternion.identity);
-            Instantiate(prop2, coord2, Quaternion.identity);
-            Instantiate(prop3, coord3, Quaternion.identity);
+            Instantiate(prop1, coord1, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord2, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord3, Quaternion.identity, this.transform);
         }
         else if(randomizer == 2){
 
-            Instantiate(prop1, coord1, Quaternion.identity);
-            Instantiate(prop2, coord3, Quaternion.identity);
-            Instantiate(prop3, coord2, Quaternion.identity);
+            Instantiate(prop1, coord1, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord3, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord2, Quaternion.identity, this.transform);
         }
         else if(randomizer == 3){
 
-            Instantiate(prop1, coord2, Quaternion.identity);
-            Instantiate(prop2, coord1, Quaternion.identity);
-            Instantiate(prop3, coord3, Quaternion.identity);
+            Instantiate(prop1, coord2, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord1, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord3, Quaternion.identity, this.transform);
         }
         else if(randomizer == 4){
 
-            Instantiate(prop1, coord2, Quaternion.identity);
-            Instantiate(prop2, coord3, Quaternion.identity);
-            Instantiate(prop3, coord1, Quaternion.identity);
+            Instantiate(prop1, coord2, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord3, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord1, Quaternion.identity, this.transform);
         }
         else if(randomizer == 5){
 
-            Instantiate(prop1, coord3, Quaternion.identity);
-            Instantiate(prop2, coord1, Quaternion.identity);
-            Instantiate(prop3, coord2, Quaternion.identity);
+            Instantiate(prop1, coord3, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord1, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord2, Quaternion.identity, this.transform);
         }
         else{
 
-            Instantiate(prop1, coord3, Quaternion.identity);
-            Instantiate(prop2, coord2, Quaternion.identity);
-            Instantiate(prop3, coord1, Quaternion.identity);
+            Instantiate(prop1, coord3, Quaternion.identity, this.transform);
+            Instantiate(prop2, coord2, Quaternion.identity, this.transform);
+            Instantiate(prop3, coord1, Quaternion.identity, this.transform);
         }
         
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3278150760058148686}
   - component: {fileID: 3278150760058148687}
   - component: {fileID: 3278150760058148684}
+  - component: {fileID: -7158066738809680282}
   m_Layer: 0
   m_Name: Ballon
   m_TagString: Untagged
@@ -101,3 +102,15 @@ CircleCollider2D:
   m_Offset: {x: 0.2986409, y: -0.64152217}
   serializedVersion: 2
   m_Radius: 1.6745309
+--- !u!114 &-7158066738809680282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278150760058148689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf454801bd7ed84a88fb57c1d434851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
