@@ -7,15 +7,17 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     public MoveOnClic cameraScript;
     private float speed = 0.4f;
+    public SphereChecker checker;
 
-    [SerializeField]
-    Animator animatorCont;
+    
+    public Animator animatorCont;
     
 
     void Start()
     {
         rb = GetComponent <Rigidbody2D>();
         animatorCont = GetComponent<Animator>();
+        checker = GameObject.Find("SphereChecker").GetComponent<SphereChecker>();
         cameraScript = FindObjectOfType<MoveOnClic>();
         
         
@@ -24,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(cameraScript.trigger == true){
+       if(cameraScript.trigger == true && checker.cont <3){
          rb.AddForce(transform.right * speed);
             animatorCont.SetBool("walkingAnimator", true);
        }

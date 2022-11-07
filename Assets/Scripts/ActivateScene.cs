@@ -20,12 +20,12 @@ public class ActivateScene : MonoBehaviour
     {
         if(videoPlayer.isPlaying == false){ 
          fondo.SetActive(true);
-            Debug.Log("activau");
+            
         }
         else
         {
             fondo.SetActive(false);
-            Debug.Log("desactivau");
+            
         }
     }
 

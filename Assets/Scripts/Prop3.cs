@@ -1,18 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Prop3 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public ActivateScene videoplayer;
+    private VideoPlayer Video;
+
+    public float delay = 10f;
+    
+    private void Start()
     {
-        
+        videoplayer = GameObject.Find("VideoPlayer").GetComponent<ActivateScene>();
+        Video = GameObject.Find("VideoPlayer").GetComponent<VideoPlayer>();
+    }
+    public void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            videoplayer.SetVideo(videoplayer.prop3);            
+            Invoke(nameof(LoadNextScene), delay);        
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void LoadNextScene() {
+        SceneManager.LoadScene("Nictophobia 1");
+    
     }
 }
+
