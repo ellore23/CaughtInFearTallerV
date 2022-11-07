@@ -9,8 +9,14 @@ public class AnimationMngr : MonoBehaviour
     public VideoClip clip1;
     public VideoClip clip2;
     public GameObject atty;
+    private bool Anim1Ended = false;
+
+    public Camera maincamera;
+    public Camera secondcamera;
     void Start()
     {
+        maincamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        secondcamera = GameObject.Find("Second camera").GetComponent<Camera>();
         videoPlayer = GetComponent<VideoPlayer>();
     }
 
@@ -22,7 +28,7 @@ public class AnimationMngr : MonoBehaviour
             videoPlayer.clip = clip1;
             videoPlayer.Play();
 
-            if(videoPlayer.clip == clip1)
+            if(videoPlayer.clip == clip1 && Anim1Ended == false)
             {
                 StartCoroutine(PlayThirdClipOnLoop());
             }
@@ -32,9 +38,18 @@ public class AnimationMngr : MonoBehaviour
     public IEnumerator PlayThirdClipOnLoop()
     {
         yield return new WaitForSeconds(7);
-        Instantiate(atty, new Vector3(1.2f, -2.05f, -0.4f), Quaternion.identity);
+        Anim1Ended = true;
+        Instantiate(atty, new Vector3(21.095705f, -1.21168661f, -0.412089586f), Quaternion.identity);
+        Instantiate(atty, new Vector3(0.924000025f, -1.45f, -0.412089586f), Quaternion.identity);
+        
         videoPlayer.clip = clip2;
         videoPlayer.Play();
         videoPlayer.isLooping = true;
+        yield return new WaitForSeconds(12);
+        videoPlayer.Stop();
+        maincamera.enabled = false;
+        secondcamera.enabled = true;
+
+
     }
 }
