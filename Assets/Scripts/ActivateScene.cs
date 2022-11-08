@@ -10,6 +10,7 @@ public class ActivateScene : MonoBehaviour
     public VideoClip prop1;
     public VideoClip prop2;
     public VideoClip prop3;
+
     void Start()
     {
         videoPlayer = GetComponent<VideoPlayer>();

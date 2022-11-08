@@ -19,7 +19,6 @@ public class ClownSceneSetter : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         maincamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         secondcamera = GameObject.Find("Second Camera").GetComponent<Camera>();
-
     }
 
     // Update is called once per frame

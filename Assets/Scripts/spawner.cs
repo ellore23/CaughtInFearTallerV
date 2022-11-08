@@ -7,6 +7,7 @@ public class spawner : MonoBehaviour
     public GameObject prop1;
     public GameObject prop2;
     public GameObject prop3;
+
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
@@ -15,13 +16,15 @@ public class spawner : MonoBehaviour
     Vector3 coord2;
     Vector3 coord3;
 
-    int posiciones;
+    Dictionary<string, Vector3> Coords = new Dictionary<string, Vector3>();    
+    
     int randomizer;
 
-    void Start(){
-        coord1 = pos1.transform.position;
-        coord2 = pos2.transform.position;
-        coord3 = pos3.transform.position;        
+    void Start(){        
+
+        Coords.Add("C1", coord1 = pos1.transform.position);
+        Coords.Add("C2", coord2 = pos2.transform.position);
+        Coords.Add("C3", coord3 = pos3.transform.position);
 
         Randomizing();
     }
