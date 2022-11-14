@@ -41,20 +41,17 @@ public class ClownSceneSetter : MonoBehaviour
         secondcamera = GameObject.Find("Second Camera").GetComponent<Camera>();
         maincamera.enabled = true;
         secondcamera.enabled = false;
-        
+        StartCoroutine(StartRoutines());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(MainCamera.Zoomfinished == true)
-        {
-            Circus.active = false;
-            videoPlayer.Play();
-            StartCoroutine(ActivateClown());
+ 
 
-        }       
-        
+    private IEnumerator StartRoutines()
+    {
+        yield return new WaitForSeconds(5);
+        Circus.active = false;
+        videoPlayer.Play();
+        StartCoroutine(ActivateClown());
     }
 
     private IEnumerator ActivateClown()
@@ -89,17 +86,11 @@ public class ClownSceneSetter : MonoBehaviour
             
         }
         yield return new WaitForSeconds(7);
-        esc = true;
-        if (esc == true)
-        {
-            secondcamera.gameObject.transform.position = new Vector3(40.32f, 0.14f, 0f);  
-            Instantiate(AttyFall, new Vector3(40.22496f, -0.001663208f, 1f), Quaternion.identity);
-            morado.Play();
-            verde.Play();
-            azul.Play();
-            esc = false;
-            
-        }
+        secondcamera.gameObject.transform.position = new Vector3(40.32f, 0.14f, 0f);
+        Instantiate(AttyFall, new Vector3(40.22496f, -0.001663208f, 1f), Quaternion.identity);
+        morado.Play();
+        verde.Play();
+        azul.Play();     
         yield return new WaitForSeconds(1000000000000000);
        
 
