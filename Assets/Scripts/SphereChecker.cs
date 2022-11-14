@@ -37,6 +37,7 @@ public class SphereChecker : MonoBehaviour
             Instantiate(screamer, this.transform.position, Quaternion.identity);
             cont++;
             scriptAtty.animatorCont.SetBool("nictoAppeared", true);
+
         }
 
     }

@@ -40,12 +40,13 @@ public class AnimationMngr : MonoBehaviour
         yield return new WaitForSeconds(7);
         Anim1Ended = true;
         Instantiate(atty, new Vector3(21.095705f, -1.21168661f, -0.412089586f), Quaternion.identity);
-        Instantiate(atty, new Vector3(0.924000025f, -1.45f, -0.412089586f), Quaternion.identity);
+        var firstIntantiatedAtty = Instantiate(atty, new Vector3(0.924000025f, -1.45f, -0.412089586f), Quaternion.identity);
         
         videoPlayer.clip = clip2;
         videoPlayer.Play();
         videoPlayer.isLooping = true;
         yield return new WaitForSeconds(12);
+        Destroy(firstIntantiatedAtty);
         videoPlayer.Stop();
         maincamera.enabled = false;
         secondcamera.enabled = true;
