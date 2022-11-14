@@ -12,7 +12,7 @@ public class ClownSceneSetter : MonoBehaviour
     public CameraZoom MainCamera;
     public Camera maincamera;
     public Camera secondcamera;
-    public Camera thirdcamera;
+  
 
     public PlayerMovement scriptAtty;
 
@@ -22,9 +22,15 @@ public class ClownSceneSetter : MonoBehaviour
 
     public GameObject AttyFall;
 
+    public ParticleSystem morado;
+    public ParticleSystem verde;
+    public ParticleSystem azul;
+
+
     bool sc1 = true;
     bool sc2 = true;
     bool sc3 = true;
+    bool esc = false;
 
     void Start()
     {
@@ -33,10 +39,9 @@ public class ClownSceneSetter : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         maincamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         secondcamera = GameObject.Find("Second Camera").GetComponent<Camera>();
-        thirdcamera = GameObject.Find("Third Camera").GetComponent<Camera>();
         maincamera.enabled = true;
         secondcamera.enabled = false;
-        thirdcamera.enabled = false;
+        
     }
 
     // Update is called once per frame
@@ -56,6 +61,7 @@ public class ClownSceneSetter : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         ClownSc1.active = true;
+        esc = false;
         videoPlayer.Stop();        yield return new WaitForSeconds(3);
         maincamera.enabled = false;
         secondcamera.enabled = true;
@@ -80,11 +86,23 @@ public class ClownSceneSetter : MonoBehaviour
         {
             Instantiate(Screamer3, new Vector3(19.97f, 1.02f, -1f), Quaternion.identity);
             sc3 = false;
+            
         }
-        yield return new WaitForSeconds(5);
-        secondcamera.enabled = false;
-        thirdcamera.enabled = true;
-        Instantiate(AttyFall, new Vector3(4.155933f, -0.7988773f, 1f), Quaternion.identity);
+        yield return new WaitForSeconds(7);
+        esc = true;
+        if (esc == true)
+        {
+            secondcamera.gameObject.transform.position = new Vector3(40.32f, 0.14f, 0f);  
+            Instantiate(AttyFall, new Vector3(40.22496f, -0.001663208f, 1f), Quaternion.identity);
+            morado.Play();
+            verde.Play();
+            azul.Play();
+            esc = false;
+            
+        }
+        yield return new WaitForSeconds(1000000000000000);
+       
+
 
 
     }
