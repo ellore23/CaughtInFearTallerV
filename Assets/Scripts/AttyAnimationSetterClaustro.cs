@@ -19,11 +19,14 @@ public class AttyAnimationSetterClaustro : MonoBehaviour
         playerAnimator.SetBool("ClownScreamer1", true);
         yield return new WaitForSeconds(1.2f);
         playerAnimator.SetBool("ClownScreamer1", false);
-        yield return new WaitForSeconds(18);
+        yield return new WaitForSeconds(16);
         playerAnimator.SetBool("ClownScreamer2", true);
         yield return new WaitForSeconds(1.2f);
         playerAnimator.SetBool("ClownScreamer2", false);
-        yield return new WaitForSeconds(32);
+
+
+
+        yield return new WaitForSeconds(16);
         playerAnimator.SetBool("ClownScreamer3", true);
       
 

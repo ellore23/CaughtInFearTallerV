@@ -68,8 +68,17 @@ public class SphereChecker : MonoBehaviour
         morado.Play();
         verde.Play();
         azul.Play();
+        PhobiaSelectionObjDetector.Clicprop3 = true;
+        PhobiaSelectionObjDetector.propCount++;
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("PhobiaSelectionWireframe 1");
+        if (PhobiaSelectionObjDetector.propCount > 2)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        else
+        {
+            SceneManager.LoadScene("PhobiaSelectionNoVideo");
+        }
     }
 
     public IEnumerator MoveAtty()

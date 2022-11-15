@@ -28,6 +28,7 @@ public class CameraZoom : MonoBehaviour
 
     public IEnumerator ZoomCamera()
     {
+        yield return new WaitForSeconds(3);
         while (timer < time)
         {
             timer += Time.deltaTime;

@@ -145,10 +145,19 @@ public class AnimationMngr : MonoBehaviour
         morado.Play();
         verde.Play();
         azul.Play();
+        PhobiaSelectionObjDetector.propCount++;
+        PhobiaSelectionObjDetector.Clicprop2 = true;
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene("PhobiaSelectionWireframe 1");
+        if (PhobiaSelectionObjDetector.propCount > 2)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+        else
+        {
+            SceneManager.LoadScene("PhobiaSelectionNoVideo");
+        }
 
-        
+
     }
 
     

@@ -17,7 +17,7 @@ public class Prop2 : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && PhobiaSelectionObjDetector.Clicprop2 == false)
         {
             videoplayer.SetVideo(videoplayer.prop2);
             if (Video.isPlaying == false)
