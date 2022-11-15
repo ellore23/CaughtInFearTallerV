@@ -6,14 +6,16 @@ public class AnimationSetter : MonoBehaviour
 {
     public GameObject fondo;
     public GameObject animacionInicial;
-    public Animator nicto;
-    
-   
+    public Animator nicto;    
+
+
     private void Awake()
     {
         nicto = GameObject.Find("Animation").GetComponent<Animator>();
+ 
         fondo.SetActive(false);
         animacionInicial.SetActive(true);
+
     }
 
     private void Update()
@@ -28,7 +30,7 @@ public class AnimationSetter : MonoBehaviour
             fondo.SetActive(true);
             animacionInicial.SetActive(false);
         }
-       
+
     }
 
 }

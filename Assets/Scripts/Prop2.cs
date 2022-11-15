@@ -22,7 +22,7 @@ public class Prop2 : MonoBehaviour
             videoplayer.SetVideo(videoplayer.prop2);
             if (Video.isPlaying == false)
             {
-                SceneManager.LoadScene("");
+                SceneManager.LoadScene("Claustrophobia");
             }
         }
     }
