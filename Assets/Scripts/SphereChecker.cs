@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SphereChecker : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class SphereChecker : MonoBehaviour
     public Camera maincamera;
     public Camera secondcamera;
     public GameObject AttyFall;
+    public GameObject OttyUi;
 
     public ParticleSystem morado;
     public ParticleSystem verde;
@@ -66,6 +68,8 @@ public class SphereChecker : MonoBehaviour
         morado.Play();
         verde.Play();
         azul.Play();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("PhobiaSelectionWireframe 1");
     }
 
     public IEnumerator MoveAtty()
@@ -74,6 +78,7 @@ public class SphereChecker : MonoBehaviour
         scriptAtty.gameObject.transform.position = new Vector3(-13.4399996f, -0.970000029f, -1f);
         yield return new WaitForSeconds(1.7f);
         scriptAtty.gameObject.transform.position = new Vector3(-3.83999991f, -0.970000029f, -1f);
+        Instantiate(OttyUi, new Vector3(2.33f, -0.922557473f, -1f), Quaternion.identity);
 
 
 

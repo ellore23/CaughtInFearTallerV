@@ -515,6 +515,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 659108796}
     m_Modifications:
+    - target: {fileID: 7887931027474229362, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887931027474229362, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887931027474229362, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8502910395301134522, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -565,11 +577,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
---- !u!4 &449113373 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8502910395301134522, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
-  m_PrefabInstance: {fileID: 449113372}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +868,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648502812
 GameObject:
@@ -983,7 +990,7 @@ Transform:
   m_Children:
   - {fileID: 288862436}
   - {fileID: 1764327613}
-  - {fileID: 449113373}
+  - {fileID: 1157887695}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1080,6 +1087,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3573055404820261512, guid: c336e1b94b90ffc4e93047440e45cb04, type: 3}
   m_PrefabInstance: {fileID: 3573055405904972408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1157887695 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7887931027474229362, guid: eaad995e69a81ab42b985d29896c5ba8, type: 3}
+  m_PrefabInstance: {fileID: 449113372}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1166949614
 GameObject:
@@ -1236,6 +1248,7 @@ MonoBehaviour:
   MainCamera: {fileID: 519420033}
   maincamera: {fileID: 519420031}
   secondcamera: {fileID: 14308908}
+  playerAnimator: {fileID: 0}
   scriptAtty: {fileID: 0}
   Screamer1: {fileID: 8253902322955681408, guid: abe8cdc604b0a264db2e2b7ca4bf776d, type: 3}
   Screamer2: {fileID: 4072047166045476099, guid: 312f894cb77370c47892c8c546fc8462, type: 3}
@@ -1485,7 +1498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3392571595463888018, guid: feea9d228ed5494418b3e3b5564d543e, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3392571595463888018, guid: feea9d228ed5494418b3e3b5564d543e, type: 3}
       propertyPath: m_LocalPosition.x

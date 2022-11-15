@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class ClownSceneSetter : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class ClownSceneSetter : MonoBehaviour
     public CameraZoom MainCamera;
     public Camera maincamera;
     public Camera secondcamera;
+
+    public Animator playerAnimator;
   
 
     public PlayerMovement scriptAtty;
@@ -30,7 +33,7 @@ public class ClownSceneSetter : MonoBehaviour
     bool sc1 = true;
     bool sc2 = true;
     bool sc3 = true;
-    bool esc = false;
+   
 
     void Start()
     {
@@ -39,9 +42,11 @@ public class ClownSceneSetter : MonoBehaviour
         videoPlayer = GetComponent<VideoPlayer>();
         maincamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         secondcamera = GameObject.Find("Second Camera").GetComponent<Camera>();
+        playerAnimator = GameObject.Find("Atty").GetComponent<Animator>();
         maincamera.enabled = true;
         secondcamera.enabled = false;
         StartCoroutine(StartRoutines());
+        
     }
 
  
@@ -58,7 +63,7 @@ public class ClownSceneSetter : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         ClownSc1.active = true;
-        esc = false;
+       
         videoPlayer.Stop();        yield return new WaitForSeconds(3);
         maincamera.enabled = false;
         secondcamera.enabled = true;
@@ -68,6 +73,9 @@ public class ClownSceneSetter : MonoBehaviour
         if(sc1 == true)
         {
             Instantiate(Screamer1, new Vector3(17.38977f, 2.284655f, -1f), Quaternion.identity);
+            playerAnimator.SetBool("ClownScreamer1", true);
+            yield return new WaitForSeconds(1);
+            playerAnimator.SetBool("ClownScreamer1", false);
             sc1 = false;
         }
        
@@ -75,6 +83,9 @@ public class ClownSceneSetter : MonoBehaviour
         if (sc2 == true)
         {
             Instantiate(Screamer2, new Vector3(20.68204f, 2.342531f, -1f), Quaternion.identity);
+            playerAnimator.SetBool("ClownScreamer2", true);
+            yield return new WaitForSeconds(1);
+            playerAnimator.SetBool("ClownScreamer2", false);
             sc2 = false;
         }
 
@@ -82,18 +93,18 @@ public class ClownSceneSetter : MonoBehaviour
         if (sc3 == true)
         {
             Instantiate(Screamer3, new Vector3(19.97f, 1.02f, -1f), Quaternion.identity);
+            playerAnimator.SetBool("ClownScreamer3", true);           
             sc3 = false;
             
         }
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(6);
         secondcamera.gameObject.transform.position = new Vector3(40.32f, 0.14f, 0f);
         Instantiate(AttyFall, new Vector3(40.22496f, -0.001663208f, 1f), Quaternion.identity);
         morado.Play();
         verde.Play();
-        azul.Play();     
-        yield return new WaitForSeconds(1000000000000000);
-       
-
+        azul.Play();
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("PhobiaSelectionWireframe 1");
 
 
     }
